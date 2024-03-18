@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main() {
+   int n,arr[n],i,j,pos,t;
+   printf("enter size:");
+   scanf("%d",&n);
+   printf("enter elements:");
+   for(i=0;i<n;i++)
+   {
+   	scanf("%d",&arr[i]);
+   }
+   for (i = 0; i < (n - 1); i++) 
+   {
+      pos= i;
+      for (j = i + 1; j < n; j++) 
+	  {
+         if (arr[pos] > arr[j])
+            pos= j;
+      }
+      if (pos!= i) 
+	  {
+         t= arr[i];
+         arr[i] = arr[pos];
+         arr[pos] = t;
+      }
+   }
+   printf("sorter array=");
+   for (i = 0; i < n; i++)
+      printf("%d ", arr[i]);
+   return 0;
+}
